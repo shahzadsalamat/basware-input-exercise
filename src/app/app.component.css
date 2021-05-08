@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-header {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  margin-left: 50px;
+}
+
+.input-main-wraper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.input-wraper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50%;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  border-top: 0 solid transparent;
+  padding: 0;
+}
+
+.mat-custom-form-field {
+  border: 1px solid #0000001F;
+  max-width: 300px;
+  width: 300px;
+  height: 36px;
+  border-radius: 4px;
+}
+
+.mat-custom-form-field:hover {
+  border: 1px solid #00000099;
+}
+
+.mat-custom-form-field:hover .mat-custom-icon-cancel {
+  display: inline-block;
+}
+
+.mat-custom-form-field:focus-within {
+  border: 2px solid #00A9CE;
+}
+
+.mat-custom-form-field:focus-within .mat-custom-label {
+  color: #00A9CE;
+}
+
+.mat-custom-label {
+  top: 178px;
+  left: 723px;
+  width: 110px;
+  height: 20px;
+  text-align: left;
+  font: normal normal medium 14px/20px Fira Sans;
+  letter-spacing: 0px;
+  color: #00000099;
+  opacity: 1;
+}
+
+.mat-custom-input {
+  max-width: 300px;
+  width: 300px;
+  height: 36px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+  color: #000000DE;
+  margin-top: 0;
+}
+
+.mat-custom-input:disabled {
+  background-color: #0000000A;
+}
+
+.mat-custom-hint {
+  top: 482px;
+  left: 743px;
+  width: 175px;
+  height: 17px;
+  text-align: left;
+  font: normal normal normal 12px/20px Fira Sans;
+  letter-spacing: 0px;
+  color: #00000099;
+  opacity: 1;
+}
+
+.mat-custom-icon-cancel {
+  top: 328px;
+  left: 991px;
+  width: 24px;
+  height: 24px;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+  vertical-align: super;
+  color: #999999;
+  display: none;
+}
+
+.mat-custom-icon-info {
+  top: 328px;
+  left: 991px;
+  width: 24px;
+  height: 24px;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+  vertical-align: sub;
+  color: #999999;
+}
+/*# sourceMappingURL=app.component.css.map */
