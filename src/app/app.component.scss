@@ -52,45 +52,44 @@ h1 {
 
 ::ng-deep {
 // overwrite to remove underline of legacy input IMPORTANT!
-.mat-form-field-appearance-legacy .mat-form-field-underline {
-    display: none;
+.content-wrapper .mat-form-field-appearance-legacy .mat-form-field-underline {
+     display: none;
  }
 
 // overwrite to take label out of input
-.mat-form-field-appearance-legacy .mat-form-field-infix {
+.content-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
     border-top: 0 solid transparent;
     padding: 0;
 }
 
-.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.content-wrapper .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
 .mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
    transform: translateY(-1.34375em) scale(1) !important; /* originally scale(0.75) */
    top: 12px;
 }
 
-.mat-form-field-appearance-legacy .mat-form-field-label-wrapper {
+.content-wrapper .mat-form-field-appearance-legacy .mat-form-field-label-wrapper {
 
    overflow: visible; 
 }
 
-.mat-custom-form-field .mat-input-element::placeholder {
-   padding-left: 10px;
+.content-wrapper .mat-custom-form-field .mat-input-element::placeholder {
    color: #000000DE;
-    
 }
 
 }
 
 //border for input IMPORTANT!
-.mat-custom-form-field {
+.content-wrapper .mat-custom-form-field .mat-custom-input {
    border: 1px solid #0000001F;
    max-width: 300px;
    width: 300px;
    height: 36px;
    border-radius: 4px;
    overflow: unset;
+   padding-left: 15px;
 
-   &:hover {
+   &:hover:enabled {
       border: 1px solid #00000099;
 
         .mat-custom-icon-cancel {
@@ -99,7 +98,7 @@ h1 {
        
     }
 
-   &:focus-within {
+   &:focus:enabled {
       border: 2px solid #00A9CE;
 
        .mat-custom-label {
@@ -108,7 +107,7 @@ h1 {
     }
 }
 
-.mat-custom-label {
+.content-wrapper .mat-custom-label {
     top: 418px;
     left: 723px;
     width: 110px;
@@ -120,7 +119,7 @@ h1 {
     opacity: 1;
 }
 
-.mat-custom-input {
+.content-wrapper .mat-custom-input {
     max-width: 300px;
     width: 300px;
     height: 36px;
@@ -131,10 +130,14 @@ h1 {
 
     &:disabled {
         background-color: #0000000A;
-      }
+        
+        &::placeholder{
+            color: #00000061;
+        } 
+    }
 }
 
- .mat-custom-hint {
+.content-wrapper .mat-custom-hint {
     top: 482px;
     left: 743px;
     width: 175px;
@@ -144,7 +147,7 @@ h1 {
     opacity: 1;
 }
 
- .mat-custom-icon-cancel {
+.content-wrapper .mat-custom-icon-cancel {
     top: 328px;
     left: 991px;
     width: 24px;
@@ -153,18 +156,30 @@ h1 {
     opacity: 1;
     vertical-align: super;
     color: #999999;
-    display: none;
-    margin-right: 12px;
+    display: inline-block;
+    padding-left: 86px;
 }
 
-.mat-custom-icon-info {
-    top: 328px;
-    left: 991px;
-    width: 24px;
+.content-wrapper .mat-custom-icon-info {
     height: 24px;
     background: transparent 0% 0% no-repeat padding-box;
     opacity: 1;
-    vertical-align: sub;
     color: #999999;
     margin-right: 5px;
+}
+
+.mat-error {
+    color: #f44336;
+}
+
+.ng-invalid.ng-touched .mat-custom-input, .ng-invalid.ng-dirty .mat-custom-input{ 
+    border: 2px solid red !important;
+}
+
+.content-wrapper .mat-custom-input {
+    &:focus {      
+        &::placeholder{
+            color: transparent;
+        } 
+    }
 }
