@@ -21,11 +21,15 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class AppComponent {
   title = 'angular';
 
+// defining the types for ngmodel of inputs
+  defaultInputValue: any;
+  errorInputValue: any;
+
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
-
   matcher = new MyErrorStateMatcher();
-
 }
+
+

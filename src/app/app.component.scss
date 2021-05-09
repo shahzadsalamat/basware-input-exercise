@@ -168,18 +168,11 @@ h1 {
     margin-right: 5px;
 }
 
+// email error colors
 .mat-error {
     color: #f44336;
 }
 
 .ng-invalid.ng-touched .mat-custom-input, .ng-invalid.ng-dirty .mat-custom-input{ 
     border: 2px solid red !important;
-}
-
-.content-wrapper .mat-custom-input {
-    &:focus {      
-        &::placeholder{
-            color: transparent;
-        } 
-    }
 }

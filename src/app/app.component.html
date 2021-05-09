@@ -8,8 +8,9 @@
       <div class="content-right">
         <mat-form-field appearance="legacy" class="mat-custom-form-field" floatLabel="always">
           <mat-label class="mat-custom-label">Component label</mat-label>
-          <input class="mat-custom-input" matInput placeholder="Loreum ipsum dolor sit amet">
-          <mat-icon class="mat-custom-icon-cancel" matSuffix>cancel</mat-icon>
+          <input [(ngModel)]="defaultInputValue" class="mat-custom-input" matInput placeholder="Loreum ipsum dolor sit amet">
+          <mat-icon (click)="defaultInputValue=''" *ngIf="defaultInputValue" class="mat-custom-icon-cancel" matSuffix>cancel
+          </mat-icon>
           <mat-hint class="mat-custom-hint">
             <mat-icon class="mat-custom-icon-info" matSuffix>info</mat-icon>Component specific information
           </mat-hint>
@@ -21,8 +22,7 @@
       <div class="content-right">
         <mat-form-field appearance="legacy" class="mat-custom-form-field" floatLabel="always">
           <mat-label class="mat-custom-label">Component label</mat-label>
-          <input class="mat-custom-input" matInput placeholder="Loreum ipsum dolor sit amet" disabled>
-          <mat-icon class="mat-custom-icon-cancel" matSuffix>cancel</mat-icon>
+          <input  class="mat-custom-input" matInput placeholder="Loreum ipsum dolor sit amet" disabled>
           <mat-hint class="mat-custom-hint">
             <mat-icon class="mat-custom-icon-info" matSuffix>info</mat-icon>Component specific information
           </mat-hint>
@@ -34,26 +34,26 @@
       <div class="content-right">
         <mat-form-field appearance="legacy" class="mat-custom-form-field" floatLabel="always">
           <mat-label class="mat-custom-label">Component label</mat-label>
-          <input class="mat-custom-input" matInput placeholder="Loreum ipsum dolor sit amet" readonly>
-          <mat-icon class="mat-custom-icon-cancel" matSuffix>cancel</mat-icon>
+          <input  class="mat-custom-input" matInput placeholder="Loreum ipsum dolor sit amet" readonly>
           <mat-hint class="mat-custom-hint">
             <mat-icon class="mat-custom-icon-info" matSuffix>info</mat-icon>Component specific information
           </mat-hint>
         </mat-form-field>
       </div>
     </div>
-  
+
     <div class="content-wrapper">
       <div class="content-left">ERROR</div>
       <div class="content-right">
         <mat-form-field appearance="legacy" class="mat-custom-form-field" floatLabel="always">
           <mat-label class="mat-custom-label">Component label</mat-label>
-          <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-            placeholder="Ex. pat@example.com" class="mat-custom-input" >
-            <mat-icon class="mat-custom-icon-cancel" matSuffix>cancel</mat-icon>
-            <mat-hint class="mat-custom-hint">
-              <mat-icon class="mat-custom-icon-info" matSuffix>info</mat-icon>Component specific information
-            </mat-hint>
+          <input [(ngModel)]="errorInputValue" type="email" matInput [formControl]="emailFormControl"
+            [errorStateMatcher]="matcher" placeholder="example@domain.com" class="mat-custom-input">
+          <mat-icon (click)="errorInputValue=''" *ngIf="errorInputValue"  class="mat-custom-icon-cancel" matSuffix>cancel
+          </mat-icon>
+          <mat-hint class="mat-custom-hint">
+            <mat-icon class="mat-custom-icon-info" matSuffix>info</mat-icon>Component specific information
+          </mat-hint>
           <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
             Please enter a valid email address
           </mat-error>
@@ -64,4 +64,4 @@
       </div>
     </div>
 
-</div>
+  </div>
